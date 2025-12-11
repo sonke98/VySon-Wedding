@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>TƯỜNG VY & HỒNG SƠN - WEDDING TIME</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="cover">
+        <img src="images/1.jpg">
+        <img src="images/3.jpg">
+      </div>
+      <div class="content">
+        <img src="images/2.jpg">
+      </div>
+    </div>
+    <script>
+// mở thiệp sau 5 giây
+    setTimeout(function () {
+        document.querySelector('.card').classList.add('open');
+    }, 5000);
+
+    setTimeout(function () {
+        document.body.classList.add("fade-out");
+
+        // chờ hiệu ứng 1s rồi mới chuyển trang
+        setTimeout(function () {
+            window.location.href = "sonvywedding.html";
+        }, 1000);
+
+    }, 10000); 
+</script>
+  </body>
+</html>
