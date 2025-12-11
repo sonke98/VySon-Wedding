@@ -348,23 +348,6 @@
 <section class="contact" id="contact">
 
     <div class="heading">
-        <h1>SLIDE SHOW SƠN & VY</h1>
-        <img src="images1/header-img.png" alt="">
-        <div>
-            <div style="position:relative;padding-top:56.25%;height:0;overflow:hidden;">
-  <iframe 
-    src="https://drive.google.com/file/d/15Ami65RqF6b4A2UCEDn95oTrOI8Veidc/preview" 
-    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" 
-    allow="autoplay; encrypted-media" 
-    allowfullscreen>
-  </iframe>
-</div>
-        </div>
-    </div>
-</section>
-<section class="contact" id="contact">
-
-    <div class="heading">
         <h1>GỬI MỪNG CƯỚI</h1>
         <img src="images1/header-img.png" alt="">
         <div class="QR-Bank">
@@ -376,27 +359,38 @@
 <div class="footer"> Created by <span>Hồng Sơn</span> | All rights reserved! </div>
 <script>
 const music = document.getElementById("bgMusic");
+const toggleBtn = document.getElementById("musicToggle");
+const musicIcon = document.getElementById("musicIcon");
 
-// Autoplay an toàn
-window.addEventListener("load", () => {
-    music.volume = 0; 
-    music.play().then(() => {
-        console.log("Autoplay OK");
-    }).catch(() => {
-        console.log("Autoplay blocked – waiting for user action");
-    });
-});
+let musicEnabled = false;
 
-// Chỉ cần click hoặc cuộn là bật nhạc âm lượng 1
+// ⭐ Chỉ chạy khi user click (đúng rule chặn autoplay)
 function enableMusic() {
-    music.volume = 1;
-    music.play().catch(()=>{});
-    window.removeEventListener("click", enableMusic);
-    window.removeEventListener("scroll", enableMusic);
+    if (!musicEnabled) {
+        musicEnabled = true;
+        music.volume = 1;
+        music.play().catch(err => console.log("Play error:", err));
+    }
 }
 
-window.addEventListener("click", enableMusic);
-window.addEventListener("scroll", enableMusic);
+// ---------------------------
+// Bật nhạc khi user click 1 lần
+// ---------------------------
+window.addEventListener("click", () => {
+    if (!musicEnabled) enableMusic();
+});
+
+// ---------------------------
+// Toggle loa mute / unmute
+// ---------------------------
+toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // không gọi enableMusic()
+    
+    if (!musicEnabled) enableMusic(); // nếu nhấn icon lúc đầu → phải bật nhạc luôn
+
+    music.muted = !music.muted;
+    musicIcon.src = music.muted ? "images1/mute.png" : "images1/volume.png";
+});
 </script>
 <script>
     const toggleBtn = document.getElementById("musicToggle");
