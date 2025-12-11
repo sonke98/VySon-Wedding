@@ -10,6 +10,94 @@
     <link rel="stylesheet" href="style1.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style type="text/css">
+        /* Slideshow container */
+        .slideshow-container {
+          max-width: 350px;
+          position: relative;
+          margin: auto;
+          border: 5px solid gold;
+          border-radius: 5px;
+        }
+        /* Next & previous buttons */
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          padding: 16px;
+          margin-top: -22px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+          background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+          background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+          .prev, .next,.text {font-size: 11px}
+        }
+</style>
 </head>
 <body>
     <div id="musicToggle" class="music-btn">
@@ -49,7 +137,7 @@
 
 <!-- vendor section starts  -->
 
-<section class="vendor" id="vendor">
+<!-- <section class="vendor" id="vendor">
 
     <div class="heading" data-aos="fade-up"
      data-aos-anchor-placement="center-bottom" data-aos-easing="linear" data-aos-duration="1000">
@@ -203,7 +291,7 @@
         </div>
     </div>
 </section>
-
+ -->
 <!-- vendor section ends -->
 
 <!-- client section starts  -->
@@ -266,7 +354,111 @@
 </section>
 
 <!-- team section starts  -->
+<section>
+    <div class="heading" data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom" data-aos-easing="linear" data-aos-duration="1000">
+        <h1 >ALBUM ẢNH</h1>
+        <img src="images1/header-img.png" alt="">
+    </div>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="slideshow/1.jpg" style="width:100%">
+        </div>
 
+        <div class="mySlides fade">
+          <img src="slideshow/2.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="slideshow/3.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="slideshow/4.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="slideshow/5.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="slideshow/6.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="slideshow/7.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="slideshow/8.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="slideshow/9.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="slideshow/10.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="slideshow/11.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="slideshow/12.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="slideshow/13.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="slideshow/14.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="slideshow/15.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="slideshow/16.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="slideshow/17.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="slideshow/18.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="slideshow/19.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="slideshow/20.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span> 
+      <span class="dot" onclick="currentSlide(6)"></span> 
+      <span class="dot" onclick="currentSlide(7)"></span>
+      <span class="dot" onclick="currentSlide(8)"></span>
+      <span class="dot" onclick="currentSlide(9)"></span>
+      <span class="dot" onclick="currentSlide(10)"></span>
+      <span class="dot" onclick="currentSlide(11)"></span> 
+      <span class="dot" onclick="currentSlide(12)"></span> 
+      <span class="dot" onclick="currentSlide(13)"></span>
+      <span class="dot" onclick="currentSlide(14)"></span>
+      <span class="dot" onclick="currentSlide(15)"></span> 
+      <span class="dot" onclick="currentSlide(16)"></span> 
+      <span class="dot" onclick="currentSlide(17)"></span>
+      <span class="dot" onclick="currentSlide(18)"></span>
+      <span class="dot" onclick="currentSlide(19)"></span>
+      <span class="dot" onclick="currentSlide(20)"></span>  
+    </div>
+</section>
 <section class="team" id="team">
     <div class="heading">
         <h1>Thời gian và địa điểm</h1>
@@ -358,53 +550,69 @@
 </section>
 <div class="footer"> Created by <span>Hồng Sơn</span> | All rights reserved! </div>
 <script>
-const music = document.getElementById("bgMusic");
-const toggleBtn = document.getElementById("musicToggle");
-const musicIcon = document.getElementById("musicIcon");
-
-let musicEnabled = false;
-
-// ⭐ Chỉ chạy khi user click (đúng rule chặn autoplay)
-function enableMusic() {
-    if (!musicEnabled) {
-        musicEnabled = true;
-        music.volume = 1;
-        music.play().catch(err => console.log("Play error:", err));
-    }
-}
-
-// ---------------------------
-// Bật nhạc khi user click 1 lần
-// ---------------------------
-window.addEventListener("click", () => {
-    if (!musicEnabled) enableMusic();
-});
-
-// ---------------------------
-// Toggle loa mute / unmute
-// ---------------------------
-toggleBtn.addEventListener("click", (e) => {
-    e.stopPropagation(); // không gọi enableMusic()
-    
-    if (!musicEnabled) enableMusic(); // nếu nhấn icon lúc đầu → phải bật nhạc luôn
-
-    music.muted = !music.muted;
-    musicIcon.src = music.muted ? "images1/mute.png" : "images1/volume.png";
-});
-</script>
-<script>
+    const music = document.getElementById("bgMusic");
     const toggleBtn = document.getElementById("musicToggle");
     const musicIcon = document.getElementById("musicIcon");
 
-    toggleBtn.addEventListener("click", () => {
+    let musicStarted = false;
+
+    // ⭐ Chỉ bật nhạc khi user tương tác lần đầu
+    function startMusic() {
+        if (!musicStarted) {
+            musicStarted = true;
+            music.muted = false;   // đảm bảo không bị tắt
+            music.volume = 1;      
+            music.play().catch(()=>{});
+        }
+    }
+
+    // ---- Bật nhạc khi user click vào màn hình ----
+    window.addEventListener("click", () => {
+        startMusic();
+    });
+
+    // ---- Toggle mute/unmute ----
+    toggleBtn.addEventListener("click", (e) => {
+        e.stopPropagation();  // không bị kích hoạt event click ngoài
+
+        startMusic(); // nếu user nhấn icon loa lần đầu → vẫn phải bật nhạc
+
+        // Toggle mute
         music.muted = !music.muted;
 
-        if (music.muted) {
-            musicIcon.src = "images1/mute.png";
-        } else {
-            musicIcon.src = "images1/volume.png";
-        }
+        // Đổi icon
+        musicIcon.src = music.muted
+            ? "images1/mute.png"
+            : "images1/volume.png";
     });
+</script>
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
 </script>
 <script> 
     let days = document.getElementById('days');
