@@ -376,7 +376,39 @@ header .navbar a:hover {
   color: #fff;
   background: var(--pink);
 }
+.typing-container
+{
+  text-align: center;
+  color: #fff;
+  font-size: 1.5em;
+}
+#typing {
+  white-space: pre-line;
+  display: inline;
+  font-weight: bold;
+  font-family: 'Courier';
+}
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.5em;
+  background: #fff;
+  margin-left: 4px;
+  animation: blink 1s infinite;
+  vertical-align: bottom;
+}
 
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@media (max-width: 600px) {
+    .typing-container {
+        font-size: 24px;
+    }
+}
 #time
 {
   display: flex;
