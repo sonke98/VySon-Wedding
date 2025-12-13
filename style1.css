@@ -380,13 +380,12 @@ header .navbar a:hover {
 {
   text-align: center;
   color: #fff;
-  font-size: 1.5em;
+  font-size: 2.5em;
 }
 #typing {
   white-space: pre-line;
   display: inline;
   font-weight: bold;
-  font-family: 'Courier';
 }
 .cursor {
   display: inline-block;
