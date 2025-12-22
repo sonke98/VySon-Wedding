@@ -101,9 +101,48 @@
         @media only screen and (max-width: 300px) {
           .prev, .next,.text {font-size: 11px}
         }
+        #musicOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.5s ease;
+}
+
+.overlay-content {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    animation: pulse 1.5s infinite;
+}
+
+.overlay-content img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes pulse {
+    0%   { transform: scale(1); opacity: 1; }
+    50%  { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
 </style>
 </head>
 <body>
+    <div id="musicOverlay">
+        <div class="overlay-content">
+            <img src="images1/volume.png" alt="">
+            <p>Chạm để bật nhạc</p>
+        </div>
+    </div>
     <div id="musicToggle" class="music-btn">
     <img id="musicIcon" src="images1/volume.png" alt="music">
 </div>
@@ -425,10 +464,17 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình 💍
 </script>
 <script>
     const music = document.getElementById("bgMusic");
+    const overlay = document.getElementById("musicOverlay");
     const toggleBtn = document.getElementById("musicToggle");
     const musicIcon = document.getElementById("musicIcon");
 
     let musicStarted = false;
+
+    function updateIcon() {
+        musicIcon.src = music.muted
+            ? "images1/mute.png"
+            : "images1/volume.png";
+    }
 
     function startMusic() {
         if (!musicStarted) {
@@ -440,32 +486,26 @@ Trân trọng kính mời bạn đến dự lễ cưới của chúng mình 💍
         }
     }
 
-    function updateIcon() {
-        musicIcon.src = music.muted
-            ? "images1/mute.png"
-            : "images1/volume.png";
-    }
-
-    // Click bất kỳ đâu → bật nhạc
-    window.addEventListener("click", () => {
+    // Chạm overlay → bật nhạc + ẩn overlay
+    overlay.addEventListener("click", () => {
         startMusic();
+        overlay.style.display = "none";
     });
 
-    // Click icon loa
+    // Icon loa toggle
     toggleBtn.addEventListener("click", (e) => {
         e.stopPropagation();
 
-        // Nếu chưa bật nhạc → chỉ bật nhạc
         if (!musicStarted) {
             startMusic();
             return;
         }
 
-        // Nếu đã bật → toggle mute
         music.muted = !music.muted;
         updateIcon();
     });
 </script>
+
 
 <script>
 let slideIndex = 1;
